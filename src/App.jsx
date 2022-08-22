@@ -1,27 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./components/NavBar/navbar";
+import Title from "./container/ItemListContainer";
+//import carrito from './../public/carrito.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Carrusel from "./components/Carrusel/carrusel"
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world!!! 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Navbar />
+        <header className="App-header">
+          <Carrusel/>
+          <Title msj="Hola a todos" color="grey" />
+        </header>
+      </div>
     </div>
   );
 }
+
+
+
+
 
 export default App;
