@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import neumaticos1 from '../../assets/neumaticos1.jpg'
 
 
 function Carrusel() {
@@ -7,18 +8,18 @@ return (
         <Carousel.Item interval={1000}>
         <img
         className="d-block w-100"
-        src=""
-        alt="Sobre Nosotros"
+        src={neumaticos1}
+        alt="Neumaticos"
         />
         <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Neumaticos</h3>
+            <p>Conoce los mejores neumaticos a un precio increible!</p>
         </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item interval={500}>
         <img
         className="d-block w-100"
-        src="holder.js/800x400?text=Second slide&bg=282c34"
+        src={neumaticos1}
         alt="Second slide"
         />
         <Carousel.Caption>
@@ -29,7 +30,7 @@ return (
     <Carousel.Item>
         <img
         className="d-block w-100"
-        src="holder.js/800x400?text=Third slide&bg=20232a"
+        src={neumaticos1}
         alt="Third slide"
         />
         <Carousel.Caption>

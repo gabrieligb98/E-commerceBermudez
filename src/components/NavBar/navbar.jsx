@@ -9,7 +9,7 @@ function Navbard() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home" className='principal'>
+          <Navbar.Brand href="#home" >
             Auto Parts The Racer's Edge
           </Navbar.Brand>
           <Nav className="me-auto">
@@ -17,7 +17,6 @@ function Navbard() {
             <Nav.Link href="#neumaticos">Neumaticos y Llantas</Nav.Link>
             <Nav.Link href="#carroceria">Carroceria</Nav.Link>
             <Nav.Link href="#contacto">Contacto</Nav.Link>
-
             <CartWidget/>
           </Nav>
         </Container>
