@@ -2,7 +2,7 @@ import React from 'react';
 import imgg from '../../assets/neumaticos2.jpg';
 
 
-function Card () {
+function Item () {
     return (
         <div className="card">
             <div className ="card-body">
@@ -16,4 +16,4 @@ function Card () {
     )
 }
 
-export default Card;
+export default Item;

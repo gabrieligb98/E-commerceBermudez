@@ -1,18 +1,18 @@
 import React from 'react'
-import Card from './card'
+import Item from './item'
 
-export default function cards() {
+export default function ItemList() {
   return (
     <div className="container d-flex justify-content-center align-items-center h-100 bg-terciary">
         <div className="row">
             <div className="col-md-4">
-                <Card/>    
+                <Item/>    
             </div>
             <div className="col-md-4">
-                <Card/>    
+                <Item/>    
             </div>
             <div className="col-md-4">
-                <Card/>    
+                <Item/>    
             </div>
         </div>
     </div>
