@@ -14,7 +14,20 @@ function App() {
   const onAdd = (quantity) => {
     (console.log(`Compro: ${quantity}`))
 }
-  // const response  , const data
+  const [productos,setProductos] = useState([]);
+  const buscarProductos = async () => {
+    try {
+      const response = await fetch (`https://api.mercadolibre.com/sites/MLA/search?q=`)
+      const data = await response.json();
+      setProductos(data.results);
+    }catch (e){
+      console.log(e);
+    }
+  }
+  // useEffect (()=>{
+  //   buscarProductos()
+  // },[buscador])
+console.log(productos)
 
   return (
     <div className="App">
