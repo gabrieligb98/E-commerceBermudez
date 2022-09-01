@@ -28,12 +28,12 @@ const ItemCount = ({ stock, initial, onAdd}) => {
     };
     return(
     <div>
-        <div className="flex items-center justify center p-5 m-5 text-black bg-white rounded">
-            <button className="p-5" onClick={addNumber}>+</button>
-            <h3 className="p-5">{count}</h3>
-            <button className="p-5" onClick ={restNumber}>-</button>
+        <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded">
+            <button className="p-2" onClick={addNumber}>+</button>
+            <span className="p-2">{count}</span>
+            <button className="p-2" onClick ={restNumber}>-</button>
         </div>
-        <div className="flex items-center justify center p-5 m-5 text-black bg-white rounded"> 
+        <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded"> 
             <button onClick ={()=> onAdd(count)}> Agregar al carrito</button>
         </div>
     </div>
