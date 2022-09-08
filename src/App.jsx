@@ -5,9 +5,14 @@ import Title from "./container/ItemListContainer2";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carrusel from "./components/Carrusel/carrusel";
 import { useState } from "react";
-import ItemListContainer from "./components/Card/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import bridgestone from './assets/bridgestone.jpg'
 import ItemCount from "./components/ItemCount/ItemCount";
+import { BrowserRouter, Routes,Route} from 'react-router-dom'
+import ItemDetail from "./components/ItemDetail/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+
+
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -34,7 +39,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>}/>
+          {/* <Route path="/" element={<ItemDetailContainer/>}/> */}
+          <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
+
+
+
+      {/* <div className="container">
         <Navbar />  
           <Title msj="Hola a todos" color="grey" /> 
           <Carrusel />
@@ -43,7 +59,7 @@ function App() {
           <img src={bridgestone}></img>
         </div>
           <ItemListContainer/>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 [ 
-    {"id":0,  "name":"Neumaticos 1",  "price":30 },
+    {"id":0,  "name":"Faro",  "price":30, "img":"/farolateral.jpg"},
     {"id":1,  "name":"Neumaticos 2",  "price":35 },
     {"id":2,  "name":"Neumaticos 3",  "price":42 },
     {"id":3,  "name":"Neumaticos 4",  "price":50 },
