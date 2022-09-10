@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { pedirDatos } from "../../helpers/pedirDatos";
+import pedirDatos from "../../helper/pedirDatos";
 import { useParams } from "react-router-dom";
 
 const onAdd = (quality) => {
@@ -42,6 +42,7 @@ return (
     }
     </div>
 );
+}
 
 export default ItemListContainer;
 

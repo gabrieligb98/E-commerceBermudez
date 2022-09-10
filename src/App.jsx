@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Carrusel from "./components/Carrusel/carrusel";
 import { useState } from "react";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import bridgestone from './assets/bridgestone.jpg'
+// import bridgestone from './bridgestone.jpg'
 import ItemCount from "./components/ItemCount/ItemCount";
 import { BrowserRouter, Routes,Route} from 'react-router-dom'
 import ItemDetail from "./components/ItemDetail/ItemDetail";

@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../assets/neumaticos2.jpg';
+// import img from '../../../neumaticos2.jpg';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 
 // export default Item;
 
-const Item = ({name,id,price}) => {
+const Item = ({name,id,price,img}) => {
     return (
                 <div className="card">
                     <div className ="card-body">
