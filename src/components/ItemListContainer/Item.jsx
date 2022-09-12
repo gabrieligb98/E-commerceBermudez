@@ -25,10 +25,9 @@ const Item = ({name,id,price,img}) => {
                     <div className ="card-body">
                         { <img src={img}></img> }
                         <h3 className="card-title">{name}</h3>
-                        <p className="card-text">Descripcion: lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur</p>  
-                        <p> precio: $  {price} Dolares</p>    
-                        <ItemCount initial ={1} stock={15} />  
-                        <Link to= {`/item/${id}`} className="btn btn-primary my-2 button" variant="primary">Ver Mas</Link> 
+                         
+                         
+                        <Link to= {`/item/${id}`} className="btn btn-primary my-2 button" variant="primary">Ver Mas información sobre el producto</Link> 
                     </div>
                 </div>
             )
