@@ -11,7 +11,7 @@ import ItemCount from "./components/ItemCount/ItemCount";
 import { BrowserRouter, Routes,Route} from 'react-router-dom'
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
-
+import Nosotros from "./components/Nosotros/Nosotros"
 
 
 function App() {
@@ -44,6 +44,8 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer/>}/>
           <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+          <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
+          <Route path='/nosotros' element={<Nosotros/>}/>
         </Routes>
       </BrowserRouter>
 
