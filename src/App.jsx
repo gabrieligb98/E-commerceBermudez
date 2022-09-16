@@ -12,7 +12,7 @@ import { BrowserRouter, Routes,Route} from 'react-router-dom'
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 import Nosotros from "./components/Nosotros/Nosotros"
-
+import CartContext from "./context/cartContext"
 
 function App() {
   const [carrito, setCarrito] = useState([]);

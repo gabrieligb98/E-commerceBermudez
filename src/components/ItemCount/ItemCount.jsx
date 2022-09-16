@@ -34,7 +34,8 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             <button className="p-2" onClick ={restNumber}>-</button>
         </div>
         <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded"> 
-            <button onClick ={()=> onAdd(count)}> Agregar al carrito</button>
+            {/* <button onClick ={onAdd(count)}> Agregar al carrito</button> */}
+            {onAdd(count)}
         </div>
     </div>
     )
