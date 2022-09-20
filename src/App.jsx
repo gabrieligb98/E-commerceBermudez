@@ -12,7 +12,8 @@ import { BrowserRouter, Routes,Route} from 'react-router-dom'
 import ItemDetail from "./components/ItemDetail/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 import Nosotros from "./components/Nosotros/Nosotros"
-import CartContext from "./context/cartContext"
+import CartProvider from "./context/cartContext";
+
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div className="App">
+    <CartProvider>
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -48,6 +50,7 @@ function App() {
           <Route path='/nosotros' element={<Nosotros/>}/>
         </Routes>
       </BrowserRouter>
+    </CartProvider>  
 
 
 

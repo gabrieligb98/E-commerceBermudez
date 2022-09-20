@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import pedirDatos from "../../helper/pedirDatos";
 import { useParams } from "react-router-dom";
+import './ItemListContainer.css';
 
 const onAdd = (quality) => {
   console.log(`Compro ${quality} Items`);
@@ -37,7 +38,7 @@ return (
   <div>
     {
     loading 
-    ? <h2>Cargando.</h2> 
+    ? <div class="lds-spinner">Cargando<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     : <ItemList productos={productos} />
     }
     </div>

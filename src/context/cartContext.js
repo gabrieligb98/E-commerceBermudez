@@ -1,5 +1,82 @@
-// import react from 'React';
+import React, {useState, useEffect} from "react";
 
-// const CartContext = react.createContext(false);
+const CartContext = React.createContext();
 
-// export default CartContext;
+const CartProvider = ({children}) => {
+
+    const [productos, setProductos] = useState([]);
+    const [productosQuantity, setProductosQuantity] = useState(0);
+
+    const cantidadDeProductos = () =>  {
+        let cantidad = 0;
+    
+        productos.forEach( producto => {
+            cantidad += producto.cantidad
+    });
+    setProductosQuantity(cantidad);
+    }
+
+    useEffect( () => {
+
+        cantidadDeProductos();
+    }, [productos]);
+    
+
+    const addItemCart = (producto) => {
+    if(isInCart(producto.id)){
+    const encontrado = productos.find( prod => prod.id === producto.id);
+    const productoEncontradoIndex = productos.indexOf(encontrado);
+    const productosAuxiliar = [...productos];
+
+    productosAuxiliar[productoEncontradoIndex].cantidad += producto.cantidad;
+    setProductos(productosAuxiliar)
+
+    } else {
+
+    setProductos([...productos, producto]);
+    }
+    }
+
+const RemoveItem = (id) => {
+    setProductos(productos.filter (producto => producto.id !== id)  );
+    setProductosQuantity();
+}
+
+const clear = () => {
+        setProductos([]);
+        setProductosQuantity(0);
+}
+
+const precioTotal = () => {
+    let total = 0;
+    productos.forEach( producto => {
+    total += (producto.precio * producto.cantidad);
+})
+    return total;
+}
+
+const isInCart = (id) => {
+    return productos.some( product => product.id === id );
+}
+
+const data = {
+    productos,
+    addItemCart,
+    RemoveItem,
+    clear,
+    productosQuantity,
+    precioTotal
+}
+
+    return (
+        <CartContext.Provider value={data}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+
+
+export default CartProvider;
+
+export {CartContext}

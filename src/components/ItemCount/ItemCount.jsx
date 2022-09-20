@@ -1,16 +1,3 @@
-// const Contador = ({carritoLength}) => {
-//     return (
-//         <div>
-//             <h4>
-//                 Has ingresado {carritoLength} productos al carrito
-//             </h4>
-//         </div>
-//     )
-// }
-
-// export default Contador
-
-
 import React, { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd}) => {
@@ -34,8 +21,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             <button className="p-2" onClick ={restNumber}>-</button>
         </div>
         <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded"> 
-            {/* <button onClick ={onAdd(count)}> Agregar al carrito</button> */}
-            {onAdd(count)}
+            <button onClick={() => onAdd(count)}>Agregar al carrito!</button>
         </div>
     </div>
     )

@@ -1,38 +1,38 @@
 import Card from "react-bootstrap/Card";
 // import { Link } from "react-router-dom";
-import {useState} from 'react';
+import {useState,useContext} from 'react';
 import ItemCount from "../ItemCount/ItemCount";
-import Modul from "../Modal/modal";
+// import Modul from "../Modal/modal";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 
 
 
 
 const ItemDetail = ({ item }) => {
   
-
-  const [cantidad, setCantidad] = useState();
+  const {addItemCart} = useContext (CartContext)
+  const [cantidad, setCantidad] = useState(0);
+  const [cantidadSeleccionada,setCantidadSeleccionada] = useState (false);
+  
+  
   const guardarValor = (cantidad) => {
-    // alert (cantidad)
-    // setMostrar  (true)
     return setCantidad (cantidad) ;
-
-  //   return (
-  //     // <button onClick></button>
-  //     // <Modul cantidad = {cantidad} />
-  //   )
-   }
-    
+  }
+  const itemsAdded = (count) => {
+    addItemCart({...item,cantidad,count});
+    setCantidadSeleccionada(true);
+  }
   return (
     <div className="container my-5">
       <Card style={{ width: "18rem" }} className="producto mx-auto">
         <Card.Title>  {item.name} <br></br>{item.modelo} </Card.Title>
         <Card.Img src={item.img}></Card.Img>
         <Card.Body> <b>{item.descripcion}</b> </Card.Body>
-        <ItemCount initial ={1} stock={15} onAdd={guardarValor}/>
-      <Modul cantidad = {cantidad}/>
+        {!cantidadSeleccionada ? (<ItemCount Stock= {10} onAdd={itemsAdded} productoData={item} />) :  (<Link to ="/cart">Desea terminar su compra?</Link>)}        
+      {/* {cantidad >= 1 ? ( <Link to="/cart" className="btn btn-success">Desea terminar su compra?</Link> ) : (<ItemCount initial={1} stock={15} onAdd={guardarValor} />)} */}
         {/* <button onClick={agregarAlCarrito}>Añadir Al Carrito</button>  */}
       </Card>
-      {/* {mostrar?<Modul cantidad = {cantidad}/> : null} */}
       {/* <Link to={``} className="btn btn-success my-2" variant="primary">
         Agregar al carrito.
       </Link> */}
