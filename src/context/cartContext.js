@@ -4,8 +4,12 @@ const CartContext = React.createContext();
 
 const CartProvider = ({children}) => {
 
-    const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState([]); // carrito 
     const [productosQuantity, setProductosQuantity] = useState(0);
+    // const addItem = (item,quantity) =>{
+    //     item.quantity = quantity;
+    //     setProductos([...productos,item]);
+    // }
 
     const cantidadDeProductos = () =>  {
         let cantidad = 0;
@@ -73,9 +77,8 @@ const data = {
             {children}
         </CartContext.Provider>
     )
-}
-
-
+}  
+// value = {data} en CartContext.provider 
 
 export default CartProvider;
 
