@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 
 function Navbard() {
+
+  const {productos} = useContext(CartContext);
+
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -26,7 +31,7 @@ function Navbard() {
             <Link className="nav-link" to="/Contacto">
               Contacto
             </Link>
-            <CartWidget />
+            <CartWidget productos={productos}/>
           </Nav>
         </Container>
       </Navbar>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd}) => {
+const ItemCount = ({ stock, onAdd}) => {
+
     const [count, setCount] = useState(1);
+    const [stockProducto, setStockProducto] = useState(stock);
 
     const addNumber = () => {
-        if (count < stock) {
+        if (count < stockProducto) {
             setCount(count+1)
         }
     };
@@ -13,6 +15,14 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             setCount (count - 1);
         }
     };
+
+    const agregarAlCarrito = () => {
+        if(count > 0) {
+            onAdd(count)
+            setStockProducto(stockProducto - count)
+            setCount(1)
+        } else console.log("No hay mas stock");
+    }
     return(
     <div>
         <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded">
@@ -21,7 +31,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             <button className="p-2" onClick ={restNumber}>-</button>
         </div>
         <div className="flex items-center justify center p-2 m-2 text-black bg-white rounded"> 
-            <button onClick={() => onAdd(count)}>Agregar al carrito!</button>
+            <button onClick={agregarAlCarrito}>Agregar al carrito!</button>
         </div>
     </div>
     )
