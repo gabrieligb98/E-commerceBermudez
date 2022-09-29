@@ -9,7 +9,8 @@ export const productosStock = [
 
         {id:2,  
         name:"Filtros de Aire,Aceite  y Nafta", 
-        modelo: "Clio", price:22 , 
+        modelo: "Clio", 
+        price:22 , 
         img: "/FiltrosRenaultClio.jpg" , 
         descripcion : "KIT DE FILTROS + 4 LITROS DE ACEITE SEMI SINTETICO ELF 700 TS 10W40 RENAULT MOTOR D4F 1.2 16V 2006 EN ADELANTE",
         category: "Carroceria",},
@@ -29,6 +30,7 @@ export const productosStock = [
         img:"/paragolpegol92.jpg", 
         descripcion : "Marca: Genérica de color Gris con agujero para faro auxiliar / reemplazo original",
         category: "Carroceria", },
+
         {id:5,  
         name:"Pastilla Frenos", 
         modelo: "Fiat 147", 
@@ -38,7 +40,7 @@ export const productosStock = [
         category: "Carroceria", },
 
         {id:6, 
-        name:"LLantas ", 
+        name:"Llantas ", 
         modelo: "Rodado 16", 
         price:25 , 
         img:"llantas2.jpg", 
