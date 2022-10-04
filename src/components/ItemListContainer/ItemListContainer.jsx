@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 import pedirDatos from "../../helper/pedirDatos";
 import { useParams } from "react-router-dom";
 import './ItemListContainer.css';
+import {getFirestore,collection,getDocs,query,where} from 'firebase/firestore'
 
 const onAdd = (quality) => {
   console.log(`Compro ${quality} Items`);
@@ -33,6 +34,23 @@ useEffect(() => {
       setLoading(false);
     });
 }, []);
+
+
+
+        // peticion a la base de datos 
+
+useEffect (()=>{
+  const db = getFirestore();
+  const items = collection(db,'items');
+  const categoryQuery = categoryId && query(items, where("category", "==", categoryId));
+  getDocs(categoryId ? categoryQuery : items).then((snapshot)=> {
+    const docs= snapshot.docs.map((doc)=>({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setProductos(docs);
+  });
+},[categoryId]);
 
 return (
   <div>
